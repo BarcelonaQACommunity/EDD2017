@@ -11,11 +11,14 @@ namespace PageObject.Factory.Pages
 {
     /// <summary>
     /// The Home Page.
-    /// http://demo.guru99.com/v4/
+    /// http://demo.guru99.com/V4/index.php
     /// </summary>
     /// <seealso cref="PageObject.Factory.Contracts.Pages.Contracts.IHomePage" />
     public class HomePage : PageObjectBase, IHomePage
     {
+        // The URL.
+        private static string _webDirection = "http://demo.guru99.com/V4/index.php";
+
         #region .: Selenium WebDriver Elements :.
 
         // UserId TextBox.
@@ -35,10 +38,17 @@ namespace PageObject.Factory.Pages
         /// <summary>
         /// Initializes a new instance of the <see cref="HomePage"/> class.
         /// </summary>
-        /// <param name="webDriver">The web driver.</param>
-        public HomePage(IWebDriver webDriver) 
-            : base(webDriver)
+        public HomePage()
         {
+            PageFactory.InitElements(this.WebDriver, this);
+        }
+
+        /// <summary>
+        /// Goes to home page.
+        /// </summary>
+        public void GoToHomePage()
+        {
+            this.WebDriver.Navigate().GoToUrl(_webDirection);
         }
 
         /// <summary>
@@ -55,6 +65,9 @@ namespace PageObject.Factory.Pages
 
             // Write the UserPassword.
             _userPasswordTextBox.SendKeys(user.Password);
+
+            // Click login.
+            _loginButton.Click();
         }
     }
 }

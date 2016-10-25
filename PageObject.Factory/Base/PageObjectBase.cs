@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using OpenQA.Selenium;
 using PageObject.Factory.Contracts.Base.Contracts;
 
 namespace PageObject.Factory.Base
@@ -17,10 +18,11 @@ namespace PageObject.Factory.Base
         /// <summary>
         /// Initializes a new instance of the <see cref="PageObjectBase"/> class.
         /// </summary>
-        /// <param name="webDriver">The web driver.</param>
-        public PageObjectBase(IWebDriver webDriver)
+        public PageObjectBase()
         {
-            this.WebDriver = webDriver;
+            this.WebDriver = SetUpWebDriver.SetUpWebDriver.SetUpChromeWebDriver();
+            this.WebDriver.Manage().Cookies.DeleteAllCookies();
+            this.WebDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
         }
     }
 }

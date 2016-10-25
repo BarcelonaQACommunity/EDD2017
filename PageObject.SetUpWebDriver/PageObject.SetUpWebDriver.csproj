@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A088A211-736D-48C8-8D8B-95F31064E975}</ProjectGuid>
+    <ProjectGuid>{0B22FCD6-C6A3-4722-9D22-FA4D392B6741}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PageObject.Factory</RootNamespace>
-    <AssemblyName>PageObject.Factory</AssemblyName>
+    <RootNamespace>PageObject.SetUpWebDriver</RootNamespace>
+    <AssemblyName>PageObject.SetUpWebDriver</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -43,32 +43,13 @@
       <HintPath>..\packages\Selenium.WebDriver.3.0.0\lib\net40\WebDriver.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebDriver.Support, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Selenium.Support.3.0.0\lib\net40\WebDriver.Support.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\PageObjectBase.cs" />
-    <Compile Include="Pages\HomePage.cs" />
+    <Compile Include="SetUpWebDriver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PageObject.Factory.Contracts\PageObject.Factory.Contracts.csproj">
-      <Project>{647FB283-AE5A-4B68-9799-4BE70D7BAF8B}</Project>
-      <Name>PageObject.Factory.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PageObject.Models\PageObject.Models.csproj">
-      <Project>{56f9f583-806c-4ea7-aa72-09fe612deb13}</Project>
-      <Name>PageObject.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PageObject.SetUpWebDriver\PageObject.SetUpWebDriver.csproj">
-      <Project>{0B22FCD6-C6A3-4722-9D22-FA4D392B6741}</Project>
-      <Name>PageObject.SetUpWebDriver</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

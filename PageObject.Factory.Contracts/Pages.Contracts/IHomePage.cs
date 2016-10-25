@@ -1,10 +1,18 @@
-﻿namespace PageObject.Factory.Contracts.Pages.Contracts
+﻿using PageObject.Factory.Contracts.Base.Contracts;
+
+namespace PageObject.Factory.Contracts.Pages.Contracts
 {
     /// <summary>
     /// The home page interface.
     /// </summary>
-    public interface IHomePage
+    /// <seealso cref="PageObject.Factory.Contracts.Base.Contracts.IPageObjectBase" />
+    public interface IHomePage : IPageObjectBase
     {
+        /// <summary>
+        /// Goes to home page.
+        /// </summary>
+        void GoToHomePage();
+
         /// <summary>
         /// Logins the user.
         /// </summary>
