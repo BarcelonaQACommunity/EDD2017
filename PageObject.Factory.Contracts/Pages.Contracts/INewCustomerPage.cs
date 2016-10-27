@@ -1,22 +1,23 @@
 ﻿using PageObject.Factory.Contracts.Base.Contracts;
+using PageObject.Models;
 
 namespace PageObject.Factory.Contracts.Pages.Contracts
 {
     /// <summary>
-    /// The IManager page.
+    /// The INewCustomer page.
     /// </summary>
     /// <seealso cref="PageObject.Factory.Contracts.Base.Contracts.IPageObjectBase" />
-    public interface IManagerPage : IPageObjectBase
+    public interface INewCustomerPage : IPageObjectBase
     {
         /// <summary>
-        /// Gets the welcome user manager.
+        /// Adds the new customer.
         /// </summary>
-        /// <returns></returns>
-        string GetWelcomeUserManager();
+        /// <param name="customer">The customer.</param>
+        void AddNewCustomer(Customer customer);
 
         /// <summary>
-        /// Goes to add new customer page.
+        /// Clicks the submit button.
         /// </summary>
-        void GoToAddNewCustomerPage();
+        void ClickSubmitButton();
     }
 }

@@ -41,6 +41,7 @@ namespace UserStories.AcceptanceTest.Steps
         /// <summary>
         /// Whens the user logs with a valid user.
         /// </summary>
+        [Given(@"The user logs with a valid user")]
         [When(@"The user logs with a valid user")]
         public void WhenTheUserLogsWithAValidUser()
         {

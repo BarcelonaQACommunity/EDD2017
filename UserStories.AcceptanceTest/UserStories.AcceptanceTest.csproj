@@ -75,9 +75,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Login.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\NewCustomer.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewCustomer.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\Base\BaseStep.cs" />
     <Compile Include="Steps\LoginSteps.cs" />
+    <Compile Include="Steps\NewCustomerStep.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -87,6 +93,10 @@
     <None Include="Features\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\NewCustomer.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>NewCustomer.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="runtests.cmd" />
@@ -105,6 +115,10 @@
     <ProjectReference Include="..\PageObject.Factory.Contracts\PageObject.Factory.Contracts.csproj">
       <Project>{647FB283-AE5A-4B68-9799-4BE70D7BAF8B}</Project>
       <Name>PageObject.Factory.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PageObject.Models\PageObject.Models.csproj">
+      <Project>{56F9F583-806C-4EA7-AA72-09FE612DEB13}</Project>
+      <Name>PageObject.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\PageObject.SetUpWebDriver\PageObject.SetUpWebDriver.csproj">
       <Project>{0B22FCD6-C6A3-4722-9D22-FA4D392B6741}</Project>

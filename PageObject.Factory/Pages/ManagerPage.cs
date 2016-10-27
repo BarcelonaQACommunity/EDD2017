@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using PageObject.Factory.Base;
 using PageObject.Factory.Contracts.Pages.Contracts;
+
+#pragma warning disable 649
+#pragma warning disable 169
 
 namespace PageObject.Factory.Pages
 {
@@ -16,7 +14,10 @@ namespace PageObject.Factory.Pages
         
         // The user welcome Text Box.
         [FindsBy(How = How.XPath, Using = "//*[contains(text(), 'Manger Id :')]")]
-        private IWebElement _userWelcomeTextBox { get; set; }
+        private IWebElement _userWelcomeTextBox;
+
+        [FindsBy(How = How.XPath, Using = "//*[contains(text(), 'New Customer')]")]
+        private IWebElement _newCustomerButton;
 
         #endregion
 
@@ -35,6 +36,14 @@ namespace PageObject.Factory.Pages
         public string GetWelcomeUserManager()
         {
             return this._userWelcomeTextBox.Text;
+        }
+
+        /// <summary>
+        /// Goes to add new customer page.
+        /// </summary>
+        public void GoToAddNewCustomerPage()
+        {
+            this._newCustomerButton.Click();
         }
     }
 }

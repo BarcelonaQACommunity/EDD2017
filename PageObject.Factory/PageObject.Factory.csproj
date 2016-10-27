@@ -52,6 +52,7 @@
     <Compile Include="Base\PageObjectBase.cs" />
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\ManagerPage.cs" />
+    <Compile Include="Pages\NewCustomerPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,4 @@
-﻿using Autofac;
-using PageObject.SetUpWebDriver;
+﻿using PageObject.SetUpWebDriver;
 using TechTalk.SpecFlow;
 
 namespace UserStories.AcceptanceTest.Steps.Base
