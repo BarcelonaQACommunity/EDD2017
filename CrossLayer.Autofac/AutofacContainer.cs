@@ -5,25 +5,28 @@ using PageObject.Factory.Pages;
 namespace CrossLayer.Autofac
 {
     /// <summary>
-    /// IoC Container.
+    /// Autofac Container.
     /// </summary>
     public static class AutofacContainer
     {
         /// <summary>
-        /// Gets the build container.
+        /// Gets the container.
         /// </summary>
         /// <value>
         /// The build container.
         /// </value>
-        public static ContainerBuilder BuildContainer { get; }
+        public static IContainer AContainer { get; }
 
         /// <summary>
         /// Initializes the <see cref="AutofacContainer"/> class.
         /// </summary>
         static AutofacContainer()
         {
-            BuildContainer = new ContainerBuilder();
-            BuildContainer.RegisterType<HomePage>().As<IHomePage>();
+            var buildContainer = new ContainerBuilder();
+            buildContainer.RegisterType<HomePage>().As<IHomePage>();
+            buildContainer.RegisterType<ManagerPage>().As<IManagerPage>();
+
+            AContainer = buildContainer.Build();
         }
     }
 }

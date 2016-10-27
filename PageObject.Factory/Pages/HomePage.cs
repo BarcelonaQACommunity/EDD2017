@@ -40,6 +40,7 @@ namespace PageObject.Factory.Pages
         /// </summary>
         public HomePage()
         {
+            this.SetUpWebDriverBase();
             PageFactory.InitElements(this.WebDriver, this);
         }
 
@@ -68,6 +69,15 @@ namespace PageObject.Factory.Pages
 
             // Click login.
             _loginButton.Click();
+        }
+
+        /// <summary>
+        /// Switches to incorrect user login alert.
+        /// </summary>
+        public void SwitchToIncorrectUserLoginAlert()
+        {
+            var alert = this.WebDriver.SwitchTo().Alert();
+            alert.Accept();
         }
     }
 }

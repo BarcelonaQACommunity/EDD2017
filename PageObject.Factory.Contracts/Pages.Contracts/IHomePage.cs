@@ -19,5 +19,10 @@ namespace PageObject.Factory.Contracts.Pages.Contracts
         /// <param name="userId">The user identifier.</param>
         /// <param name="password">The password.</param>
         void LoginUser(string userId, string password);
+
+        /// <summary>
+        /// Switches to incorrect user login alert.
+        /// </summary>
+        void SwitchToIncorrectUserLoginAlert();
     }
 }

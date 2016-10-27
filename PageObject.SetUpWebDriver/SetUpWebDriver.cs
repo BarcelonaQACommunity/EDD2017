@@ -12,12 +12,25 @@ namespace PageObject.SetUpWebDriver
         private const string ChromePath = @"D:\";
 
         /// <summary>
+        /// Gets the web driver.
+        /// </summary>
+        /// <value>
+        /// The web driver.
+        /// </value>
+        public static IWebDriver WebDriver { get; private set; }
+
+        /// <summary>
         /// Sets up fire fox web driver.
         /// </summary>
         /// <returns><see cref="IWebDriver"/></returns>
-        public static IWebDriver SetUpChromeWebDriver()
+        public static void SetUpChromeWebDriver()
         {
-            return new ChromeDriver(ChromeDriverService.CreateDefaultService(ChromePath), new ChromeOptions(), TimeSpan.FromSeconds(10));
+            WebDriver = new ChromeDriver(ChromeDriverService.CreateDefaultService(ChromePath), new ChromeOptions(), TimeSpan.FromSeconds(10));
+        }
+
+        public static void CloseChromeWebDriver()
+        {
+            WebDriver.Close();
         }
     }
 }

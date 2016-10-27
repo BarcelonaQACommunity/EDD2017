@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Base.Contracts\IPageObjectBase.cs" />
     <Compile Include="Pages.Contracts\IHomePage.cs" />
+    <Compile Include="Pages.Contracts\IManagerPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

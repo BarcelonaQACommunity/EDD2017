@@ -106,6 +106,10 @@
       <Project>{647FB283-AE5A-4B68-9799-4BE70D7BAF8B}</Project>
       <Name>PageObject.Factory.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PageObject.SetUpWebDriver\PageObject.SetUpWebDriver.csproj">
+      <Project>{0B22FCD6-C6A3-4722-9D22-FA4D392B6741}</Project>
+      <Name>PageObject.SetUpWebDriver</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
