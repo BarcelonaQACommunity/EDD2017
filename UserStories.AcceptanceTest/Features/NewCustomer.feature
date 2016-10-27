@@ -5,3 +5,4 @@ Scenario: The user can creates a new customer
 	And The user logs with a valid user
 	When The user goes to the new customer page
 	And The user creates a new customer with parameters 'Juan', '15121990', 'Male', 'Plaza Catalunya', 'Barcelona', 'Barcelona', '123456', '666123444', 'email@email.com', '111222333'
+	Then The system dispose the web driver

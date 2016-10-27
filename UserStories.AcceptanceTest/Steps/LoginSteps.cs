@@ -2,6 +2,7 @@
 using CrossLayer.Autofac;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PageObject.Factory.Contracts.Pages.Contracts;
+using PageObject.SetUpWebDriver;
 using TechTalk.SpecFlow;
 using UserStories.AcceptanceTest.Steps.Base;
 
@@ -73,6 +74,15 @@ namespace UserStories.AcceptanceTest.Steps
         public void ThenTheWebThrowsAPopUp()
         {
             this._homePage.SwitchToIncorrectUserLoginAlert();
+        }
+
+        /// <summary>
+        /// Thens the system dispose the web driver.
+        /// </summary>
+        [Then(@"The system dispose the web driver")]
+        public void ThenTheSystemDisposeTheWebDriver()
+        {
+            SetUpWebDriver.CloseChromeWebDriver();
         }
     }
 }

@@ -8,10 +8,5 @@ namespace UserStories.AcceptanceTest.Steps.Base
     /// </summary>
     public class BaseStep
     {
-        [AfterScenario()]
-        public void AfterScenario()
-        {
-            SetUpWebDriver.CloseChromeWebDriver();
-        }
     }
 }

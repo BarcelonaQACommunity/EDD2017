@@ -77,6 +77,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("The user creates a new customer with parameters \'Juan\', \'15121990\', \'Male\', \'Plaz" +
                     "a Catalunya\', \'Barcelona\', \'Barcelona\', \'123456\', \'666123444\', \'email@email.com\'" +
                     ", \'111222333\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+ testRunner.Then("The system dispose the web driver", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
