@@ -18,5 +18,10 @@ namespace PageObject.Factory.Contracts.Pages.Contracts
         /// Goes to add new customer page.
         /// </summary>
         void GoToAddNewCustomerPage();
+
+        /// <summary>
+        /// Goes to edit customer page.
+        /// </summary>
+        void GoToEditCustomerPage();
     }
 }

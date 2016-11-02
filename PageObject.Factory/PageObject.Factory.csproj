@@ -50,9 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\PageObjectBase.cs" />
+    <Compile Include="Pages\CustomerRegisteredPage.cs" />
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\ManagerPage.cs" />
     <Compile Include="Pages\NewCustomerPage.cs" />
+    <Compile Include="Pages\SelectEditCustomerPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -70,6 +70,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Features\EditCustomer.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditCustomer.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Login.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -82,6 +87,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\Base\BaseStep.cs" />
+    <Compile Include="Steps\EditCustomerStep.cs" />
     <Compile Include="Steps\LoginSteps.cs" />
     <Compile Include="Steps\NewCustomerStep.cs" />
   </ItemGroup>
@@ -89,6 +95,10 @@
     <None Include="App.config" />
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Features\EditCustomer.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EditCustomer.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
