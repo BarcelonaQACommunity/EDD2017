@@ -56,6 +56,7 @@ namespace UserStories.AcceptanceTest.Steps
         /// <param name="pin">The pin.</param>
         /// <param name="telephone">The telephone.</param>
         /// <param name="password">The password.</param>
+        [When(@"The user edit a customer with parameters '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)'")]
         [When(@"The user creates a new customer with parameters '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)'")]
         public void WhenTheUserCreatesANewCustomerWithParameters(string name, string date, string gender, string address,
             string city, string state, string pin, string telephone, string password)
@@ -99,13 +100,10 @@ namespace UserStories.AcceptanceTest.Steps
         /// <param name="state">The state.</param>
         /// <param name="pin">The pin.</param>
         /// <param name="telephone">The telephone.</param>
-        /// <param name="password">The password.</param>
-        [Then(@"The customer with parameters '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)' has been created")]
+        [Then(@"The customer with parameters '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)' has been created")]
         public void ThenTheCustomerWithParametersHasBeenCreated(string name, string date, string gender, string address,
-            string city, string state, string pin, string telephone, string password)
+            string city, string state, string pin, string telephone)
         {
-            var random = new Random();
-
             var customer = new Customer
             {
                 Name = name,
@@ -116,8 +114,6 @@ namespace UserStories.AcceptanceTest.Steps
                 State = state,
                 Pin = pin,
                 Telephone = telephone,
-                Email = string.Concat(random.Next(), "@", random.Next(), ".com"),
-                Password = password
             };
 
             Assert.IsTrue(this._customerRegisteredPage.IsCustomerRegistered(customer));

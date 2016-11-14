@@ -15,7 +15,7 @@ namespace CrossLayer.Autofac
         /// <value>
         /// The build container.
         /// </value>
-        public static IContainer AContainer { get; }
+        public static IContainer AContainer { get; private set; }
 
         /// <summary>
         /// Initializes the <see cref="AutofacContainer"/> class.
@@ -28,6 +28,7 @@ namespace CrossLayer.Autofac
             buildContainer.RegisterType<NewCustomerPage>().As<INewCustomerPage>();
             buildContainer.RegisterType<CustomerRegisteredPage>().As<ICustomerRegisteredPage>();
             buildContainer.RegisterType<SelectEditCustomerPage>().As<ISelectEditCustomerPage>();
+            buildContainer.RegisterType<EditCustomerPage>().As<IEditCustomerPage>();
 
             AContainer = buildContainer.Build();
         }

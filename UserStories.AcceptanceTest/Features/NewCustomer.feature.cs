@@ -80,7 +80,7 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("The user clicks the submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
  testRunner.Then("The customer with parameters \'Juan\', \'15121990\', \'Male\', \'Plaza Catalunya\', \'Barc" +
-                    "elona\', \'Barcelona\', \'123456\', \'666123444\', \'111222333\' has been created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                    "elona\', \'Barcelona\', \'123456\', \'666123444\' has been created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 10
  testRunner.And("The system dispose the web driver", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

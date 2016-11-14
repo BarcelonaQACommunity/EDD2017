@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Base\PageObjectBase.cs" />
     <Compile Include="Pages\CustomerRegisteredPage.cs" />
+    <Compile Include="Pages\EditCustomerPage.cs" />
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\ManagerPage.cs" />
     <Compile Include="Pages\NewCustomerPage.cs" />

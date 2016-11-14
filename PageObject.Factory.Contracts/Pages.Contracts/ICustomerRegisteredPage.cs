@@ -20,6 +20,8 @@ namespace PageObject.Factory.Contracts.Pages.Contracts
         /// <param name="customer">The customer.</param>
         bool IsCustomerRegistered(Customer customer);
 
+        bool IsCustomerUpdated(Customer customer);
+
         /// <summary>
         /// Swiches to alert.
         /// </summary>

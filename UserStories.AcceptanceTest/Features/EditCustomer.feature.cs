@@ -78,6 +78,14 @@ this.ScenarioSetup(scenarioInfo);
 #line 8
  testRunner.And("The user clicks the select edit customer submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
+    testRunner.And("The user edit a customer with parameters \'Plaza Catalunya\', \'Barcelona\', \'Barcelo" +
+                    "na\', \'123456\', \'666123444\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 10
+    testRunner.And("The user clicks the submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 11
+ testRunner.Then("The customer with parameters \'Juan\', \'15121990\', \'Male\', \'Plaza Catalunya\', \'Barc" +
+                    "elona\', \'Barcelona\', \'123456\', \'666123444\' has been edited", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 12
  testRunner.Then("The system dispose the web driver", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

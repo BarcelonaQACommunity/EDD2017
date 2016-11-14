@@ -6,7 +6,7 @@ Scenario: The user can creates a new customer
 	When The user goes to the new customer page
 	And The user creates a new customer with parameters 'Juan', '15121990', 'Male', 'Plaza Catalunya', 'Barcelona', 'Barcelona', '123456', '666123444', '111222333'
 	And The user clicks the submit button
-	Then The customer with parameters 'Juan', '15121990', 'Male', 'Plaza Catalunya', 'Barcelona', 'Barcelona', '123456', '666123444', '111222333' has been created
+	Then The customer with parameters 'Juan', '15121990', 'Male', 'Plaza Catalunya', 'Barcelona', 'Barcelona', '123456', '666123444' has been created
 	And The system dispose the web driver
 
 Scenario Outline: The user tries to create a new customer with empty parameters
