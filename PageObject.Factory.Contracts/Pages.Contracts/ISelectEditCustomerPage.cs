@@ -1,5 +1,4 @@
-﻿using System;
-using PageObject.Factory.Contracts.Base.Contracts;
+﻿using PageObject.Factory.Contracts.Base.Contracts;
 
 namespace PageObject.Factory.Contracts.Pages.Contracts
 {

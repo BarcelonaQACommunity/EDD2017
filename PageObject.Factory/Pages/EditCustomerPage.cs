@@ -1,13 +1,16 @@
 ﻿using PageObject.Factory.Base;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.PageObjects;
+using PageObject.Factory.Contracts.Pages.Contracts;
+using PageObject.Models;
 
 namespace PageObject.Factory.Pages
 {
-    using OpenQA.Selenium;
-    using OpenQA.Selenium.Support.PageObjects;
-
-    using PageObject.Factory.Contracts.Pages.Contracts;
-    using PageObject.Models;
-
+    /// <summary>
+    /// The Edit customer page.
+    /// </summary>
+    /// <seealso cref="PageObject.Factory.Base.PageObjectBase" />
+    /// <seealso cref="PageObject.Factory.Contracts.Pages.Contracts.IEditCustomerPage" />
     public class EditCustomerPage : PageObjectBase, IEditCustomerPage
     {
         #region .: Selenium WebDriver Elements :.
@@ -50,11 +53,18 @@ namespace PageObject.Factory.Pages
 
         #endregion
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EditCustomerPage"/> class.
+        /// </summary>
         public EditCustomerPage()
         {
             PageFactory.InitElements(this.WebDriver, this);
         }
 
+        /// <summary>
+        /// Edits the customer.
+        /// </summary>
+        /// <param name="customer">The customer.</param>
         public void EditCustomer(Customer customer)
         {
             this._addressTextBox.Clear();

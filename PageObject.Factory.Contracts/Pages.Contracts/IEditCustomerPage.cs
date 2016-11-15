@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PageObject.Factory.Contracts.Base.Contracts;
+using PageObject.Models;
 
 namespace PageObject.Factory.Contracts.Pages.Contracts
 {
-    using PageObject.Factory.Contracts.Base.Contracts;
-    using PageObject.Models;
-
+    /// <summary>
+    /// The edit customer page.
+    /// </summary>
+    /// <seealso cref="PageObject.Factory.Contracts.Base.Contracts.IPageObjectBase" />
     public interface IEditCustomerPage : IPageObjectBase
     {
         void EditCustomer(Customer customer);

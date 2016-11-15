@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using PageObject.Factory.Base;
@@ -19,6 +20,8 @@ namespace PageObject.Factory.Pages
 
         private const string CustomerUpdatedHeader = "Customer details updated Successfully!!!";
         private const string CustomerUpdatedTitle = "Updated Customer details are as follows:";
+
+        private const string AlertError = "please fill all fields";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomerRegisteredPage"/> class.
@@ -46,6 +49,11 @@ namespace PageObject.Factory.Pages
                    this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Contains(customer.Telephone));
         }
 
+        /// <summary>
+        /// Determines whether [is customer updated] [the specified customer].
+        /// </summary>
+        /// <param name="customer">The customer.</param>
+        /// <returns></returns>
         public bool IsCustomerUpdated(Customer customer)
         {
             return this.WebDriver.FindElements(By.TagName("p")).Any(x => x.Text.Contains(CustomerUpdatedHeader)) &&
@@ -65,6 +73,12 @@ namespace PageObject.Factory.Pages
         public void SwichToAlert()
         {
             var alert = this.WebDriver.SwitchTo().Alert();
+
+            if (!AlertError.Equals(alert.Text))
+            {
+                throw new Exception(string.Format("Alert will be {0}", AlertError));
+            }
+
             alert.Accept();
         }
     }

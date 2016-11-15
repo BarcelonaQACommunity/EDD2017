@@ -12,9 +12,6 @@ namespace CrossLayer.Autofac
         /// <summary>
         /// Gets the container.
         /// </summary>
-        /// <value>
-        /// The build container.
-        /// </value>
         public static IContainer AContainer { get; private set; }
 
         /// <summary>

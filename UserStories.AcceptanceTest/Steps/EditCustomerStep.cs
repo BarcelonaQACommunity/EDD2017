@@ -1,19 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Autofac;
 using CrossLayer.Autofac;
 using PageObject.Factory.Contracts.Pages.Contracts;
 using TechTalk.SpecFlow;
 using UserStories.AcceptanceTest.Steps.Base;
 using PageObject.Models;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UserStories.AcceptanceTest.Steps
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-
     /// <summary>
     /// The edit customer steps.
     /// </summary>
@@ -44,18 +39,27 @@ namespace UserStories.AcceptanceTest.Steps
             this._customerRegisteredPage = AutofacContainer.AContainer.Resolve<ICustomerRegisteredPage>();
         }
 
+        /// <summary>
+        /// Whens the user goes to the select edit customer page.
+        /// </summary>
         [When(@"The user goes to the select edit customer page")]
         public void WhenTheUserGoesToTheSelectEditCustomerPage()
         {
             this._managerPage.GoToEditCustomerPage();
         }
 
+        /// <summary>
+        /// Whens the user inserts a valid customer identifier.
+        /// </summary>
         [When(@"The user inserts a valid customer id")]
         public void WhenTheUserInsertsAValidCustomerId()
         {
             this._selectEditCustomerPage.InsertUserId("56274");
         }
 
+        /// <summary>
+        /// Whens the user clicks the submit button.
+        /// </summary>
         [When(@"The user clicks the select edit customer submit button")]
         public void WhenTheUserClicksTheSubmitButton()
         {
@@ -70,7 +74,6 @@ namespace UserStories.AcceptanceTest.Steps
         /// <param name="state">The state.</param>
         /// <param name="pin">The pin.</param>
         /// <param name="telephone">The telephone.</param>
-        /// <param name="password">The password.</param>
         [When(@"The user edit a customer with parameters '(.*)', '(.*)', '(.*)', '(.*)', '(.*)'")]
         public void WhenTheUserCreatesANewCustomerWithParameters(string address, string city, string state, string pin, string telephone)
         {
@@ -78,11 +81,11 @@ namespace UserStories.AcceptanceTest.Steps
 
             var customer = new Customer
             {
-                Address = address.Replace("empty", ""),
-                City = city.Replace("empty", ""),
-                State = state.Replace("empty", ""),
-                Pin = pin.Replace("empty", ""),
-                Telephone = telephone.Replace("empty", ""),
+                Address = address.Replace("empty", string.Empty),
+                City = city.Replace("empty", string.Empty),
+                State = state.Replace("empty", string.Empty),
+                Pin = pin.Replace("empty", string.Empty),
+                Telephone = telephone.Replace("empty", string.Empty),
                 Email = string.Concat(random.Next(), "@", random.Next(), ".com"),
             };
 
@@ -101,8 +104,7 @@ namespace UserStories.AcceptanceTest.Steps
         /// <param name="pin">The pin.</param>
         /// <param name="telephone">The telephone.</param>
         [Then(@"The customer with parameters '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)' has been edited")]
-        public void ThenTheCustomerWithParametersHasBeenEdited(string name, string date, string gender, string address,
-            string city, string state, string pin, string telephone)
+        public void ThenTheCustomerWithParametersHasBeenEdited(string name, string date, string gender, string address, string city, string state, string pin, string telephone)
         {
             var customer = new Customer
             {

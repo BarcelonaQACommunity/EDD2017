@@ -58,23 +58,22 @@ namespace UserStories.AcceptanceTest.Steps
         /// <param name="password">The password.</param>
         [When(@"The user edit a customer with parameters '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)'")]
         [When(@"The user creates a new customer with parameters '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)'")]
-        public void WhenTheUserCreatesANewCustomerWithParameters(string name, string date, string gender, string address,
-            string city, string state, string pin, string telephone, string password)
+        public void WhenTheUserCreatesANewCustomerWithParameters(string name, string date, string gender, string address, string city, string state, string pin, string telephone, string password)
         {
             var random = new Random();
 
             var customer = new Customer
             {
-                Name = name.Replace("empty", ""),
-                Date = date.Replace("empty", ""),
-                Gender = gender.Replace("empty", ""),
-                Address = address.Replace("empty", ""),
-                City = city.Replace("empty", ""),
-                State = state.Replace("empty", ""),
-                Pin = pin.Replace("empty", ""),
-                Telephone = telephone.Replace("empty", ""),
+                Name = name.Replace("empty", string.Empty),
+                Date = date.Replace("empty", string.Empty),
+                Gender = gender.Replace("empty", string.Empty),
+                Address = address.Replace("empty", string.Empty),
+                City = city.Replace("empty", string.Empty),
+                State = state.Replace("empty", string.Empty),
+                Pin = pin.Replace("empty", string.Empty),
+                Telephone = telephone.Replace("empty", string.Empty),
                 Email = string.Concat(random.Next(), "@", random.Next(), ".com"),
-                Password = password.Replace("empty", "")
+                Password = password.Replace("empty", string.Empty)
             };
 
             this._newCustomerPage.AddNewCustomer(customer);
@@ -101,8 +100,7 @@ namespace UserStories.AcceptanceTest.Steps
         /// <param name="pin">The pin.</param>
         /// <param name="telephone">The telephone.</param>
         [Then(@"The customer with parameters '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)', '(.*)' has been created")]
-        public void ThenTheCustomerWithParametersHasBeenCreated(string name, string date, string gender, string address,
-            string city, string state, string pin, string telephone)
+        public void ThenTheCustomerWithParametersHasBeenCreated(string name, string date, string gender, string address, string city, string state, string pin, string telephone)
         {
             var customer = new Customer
             {
@@ -123,6 +121,7 @@ namespace UserStories.AcceptanceTest.Steps
         /// Thens the customer cannot be created.
         /// </summary>
         [Then(@"The customer cannot be created")]
+        [Then(@"The customer cannot be edited")]
         public void ThenTheCustomerCannotBeCreated()
         {
             this._customerRegisteredPage.SwichToAlert();

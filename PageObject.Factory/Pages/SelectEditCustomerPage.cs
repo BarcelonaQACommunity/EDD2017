@@ -23,7 +23,11 @@ namespace PageObject.Factory.Pages
         [FindsBy(How = How.Name, Using = "cusid")]
         private IWebElement _userIdTextBox;
 
-        [FindsBy(How = How.Name, Using = "AccSubmit")] private IWebElement _submitButton;
+        /// <summary>
+        /// The submit button.
+        /// </summary>
+        [FindsBy(How = How.Name, Using = "AccSubmit")] 
+        private IWebElement _submitButton;
 
         #endregion
 

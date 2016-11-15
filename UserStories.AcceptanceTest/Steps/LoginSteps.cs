@@ -77,10 +77,10 @@ namespace UserStories.AcceptanceTest.Steps
         }
 
         /// <summary>
-        /// Thens the system dispose the web driver.
+        /// Afters the scenario.
         /// </summary>
-        [Then(@"The system dispose the web driver")]
-        public void ThenTheSystemDisposeTheWebDriver()
+        [AfterScenario]
+        public void AfterScenario()
         {
             SetUpWebDriver.CloseChromeWebDriver();
         }
