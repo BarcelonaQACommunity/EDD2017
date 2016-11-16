@@ -80,6 +80,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Login.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\NewAccount.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewAccount.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\NewCustomer.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -89,6 +94,7 @@
     <Compile Include="Steps\Base\BaseStep.cs" />
     <Compile Include="Steps\EditCustomerStep.cs" />
     <Compile Include="Steps\LoginSteps.cs" />
+    <Compile Include="Steps\NewAccountStep.cs" />
     <Compile Include="Steps\NewCustomerStep.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +109,10 @@
     <None Include="Features\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\NewAccount.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>NewAccount.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\NewCustomer.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

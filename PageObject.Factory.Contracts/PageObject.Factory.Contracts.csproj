@@ -54,6 +54,7 @@
     <Compile Include="Pages.Contracts\IEditCustomerPage.cs" />
     <Compile Include="Pages.Contracts\IHomePage.cs" />
     <Compile Include="Pages.Contracts\IManagerPage.cs" />
+    <Compile Include="Pages.Contracts\INewAccountPage.cs" />
     <Compile Include="Pages.Contracts\INewCustomerPage.cs" />
     <Compile Include="Pages.Contracts\ISelectEditCustomerPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

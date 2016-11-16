@@ -26,6 +26,7 @@ namespace CrossLayer.Autofac
             buildContainer.RegisterType<CustomerRegisteredPage>().As<ICustomerRegisteredPage>();
             buildContainer.RegisterType<SelectEditCustomerPage>().As<ISelectEditCustomerPage>();
             buildContainer.RegisterType<EditCustomerPage>().As<IEditCustomerPage>();
+            buildContainer.RegisterType<NewAccountPage>().As<INewAccountPage>();
 
             AContainer = buildContainer.Build();
         }
