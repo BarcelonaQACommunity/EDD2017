@@ -1,7 +1,4 @@
-﻿using PageObject.SetUpWebDriver;
-using TechTalk.SpecFlow;
-
-namespace UserStories.AcceptanceTest.Steps.Base
+﻿namespace UserStories.AcceptanceTest.Steps.Base
 {
     /// <summary>
     /// The base step.

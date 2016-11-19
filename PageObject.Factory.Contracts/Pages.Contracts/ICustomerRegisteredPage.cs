@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PageObject.Factory.Contracts.Base.Contracts;
+﻿using PageObject.Factory.Contracts.Base.Contracts;
 using PageObject.Models;
 
 namespace PageObject.Factory.Contracts.Pages.Contracts
@@ -19,6 +14,13 @@ namespace PageObject.Factory.Contracts.Pages.Contracts
         /// </summary>
         /// <param name="customer">The customer.</param>
         bool IsCustomerRegistered(Customer customer);
+
+        /// <summary>
+        /// Determines whether [is customer updated] [the specified customer].
+        /// </summary>
+        /// <param name="customer">The customer.</param>
+        /// <returns></returns>
+        bool IsCustomerUpdated(Customer customer);
 
         /// <summary>
         /// Swiches to alert.

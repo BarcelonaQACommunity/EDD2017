@@ -28,9 +28,15 @@ namespace PageObject.SetUpWebDriver
             WebDriver = new ChromeDriver(ChromeDriverService.CreateDefaultService(ChromePath), new ChromeOptions(), TimeSpan.FromSeconds(10));
         }
 
+        /// <summary>
+        /// Closes the chrome web driver.
+        /// </summary>
         public static void CloseChromeWebDriver()
         {
-            WebDriver.Close();
+            if (WebDriver != null)
+            {
+                WebDriver.Dispose();
+            }
         }
     }
 }

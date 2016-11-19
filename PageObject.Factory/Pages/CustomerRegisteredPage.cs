@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using PageObject.Factory.Base;
@@ -17,6 +18,11 @@ namespace PageObject.Factory.Pages
         private const string CustomerRegisteredHeader = "Customer Registered Successfully!!!";
         private const string CustomerRegisteredTitle = "Registered Customer details are as follows:";
 
+        private const string CustomerUpdatedHeader = "Customer details updated Successfully!!!";
+        private const string CustomerUpdatedTitle = "Updated Customer details are as follows:";
+
+        private const string AlertError = "please fill all fields";
+
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomerRegisteredPage"/> class.
         /// </summary>
@@ -32,15 +38,33 @@ namespace PageObject.Factory.Pages
         /// <returns></returns>
         public bool IsCustomerRegistered(Customer customer)
         {
-            return this.WebDriver.FindElements(By.TagName("p")).Any(x => x.Text.Equals(CustomerRegisteredHeader)) &&
-                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Equals(CustomerRegisteredTitle)) &&
-                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Equals(customer.Name)) &&
-                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Equals(customer.Gender.ToLower())) &&
-                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Equals(customer.Address)) &&
-                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Equals(customer.City)) &&
-                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Equals(customer.State)) &&
-                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Equals(customer.Pin)) &&
-                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Equals(customer.Telephone));
+            return this.WebDriver.FindElements(By.TagName("p")).Any(x => x.Text.Contains(CustomerRegisteredHeader)) &&
+                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Contains(CustomerRegisteredTitle)) &&
+                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Contains(customer.Name)) &&
+                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Contains(customer.Gender.ToLower())) &&
+                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Contains(customer.Address)) &&
+                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Contains(customer.City)) &&
+                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Contains(customer.State)) &&
+                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Contains(customer.Pin)) &&
+                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Contains(customer.Telephone));
+        }
+
+        /// <summary>
+        /// Determines whether [is customer updated] [the specified customer].
+        /// </summary>
+        /// <param name="customer">The customer.</param>
+        /// <returns></returns>
+        public bool IsCustomerUpdated(Customer customer)
+        {
+            return this.WebDriver.FindElements(By.TagName("p")).Any(x => x.Text.Contains(CustomerUpdatedHeader)) &&
+                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Contains(CustomerUpdatedTitle)) &&
+                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Contains(customer.Name)) &&
+                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Contains(customer.Gender.ToLower())) &&
+                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Contains(customer.Address)) &&
+                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Contains(customer.City)) &&
+                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Contains(customer.State)) &&
+                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Contains(customer.Pin)) &&
+                   this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Contains(customer.Telephone));
         }
 
         /// <summary>
@@ -49,6 +73,12 @@ namespace PageObject.Factory.Pages
         public void SwichToAlert()
         {
             var alert = this.WebDriver.SwitchTo().Alert();
+
+            if (!AlertError.Equals(alert.Text))
+            {
+                throw new Exception(string.Format("Alert will be {0}", AlertError));
+            }
+
             alert.Accept();
         }
     }

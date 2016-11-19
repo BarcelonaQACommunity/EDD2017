@@ -28,6 +28,12 @@ namespace PageObject.Factory.Pages
         [FindsBy(How = How.XPath, Using = "//*[contains(text(), 'Edit Customer')]")]
         private IWebElement _editCustomerButton;
 
+        /// <summary>
+        /// The new account button.
+        /// </summary>
+        [FindsBy(How = How.XPath, Using = "//*[contains(text(), 'New Account')]")]
+        private IWebElement _newAccountButton;
+
         #endregion
 
         /// <summary>
@@ -61,6 +67,14 @@ namespace PageObject.Factory.Pages
         public void GoToEditCustomerPage()
         {
             this._editCustomerButton.Click();
+        }
+
+        /// <summary>
+        /// Goes to new account page.
+        /// </summary>
+        public void GoToNewAccountPage()
+        {
+            this._newAccountButton.Click();
         }
     }
 }

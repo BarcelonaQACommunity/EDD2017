@@ -23,5 +23,10 @@ namespace PageObject.Factory.Contracts.Pages.Contracts
         /// Goes to edit customer page.
         /// </summary>
         void GoToEditCustomerPage();
+
+        /// <summary>
+        /// Goes to new account page.
+        /// </summary>
+        void GoToNewAccountPage();
     }
 }

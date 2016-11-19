@@ -17,20 +17,20 @@ namespace UserStories.AcceptanceTest.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("Login", SourceFile="Features\\Login.feature", SourceLine=0)]
-    public partial class LoginFeature
+    [TechTalk.SpecRun.FeatureAttribute("Creates a new account", SourceFile="Features\\NewAccount.feature", SourceLine=0)]
+    public partial class CreatesANewAccountFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "Login.feature"
+#line 1 "NewAccount.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Login", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Creates a new account", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -61,36 +61,35 @@ namespace UserStories.AcceptanceTest.Features
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("The user can login into the home page", SourceLine=2)]
-        public virtual void TheUserCanLoginIntoTheHomePage()
+        public virtual void TheUserCanCreatesANewAccount(string customerId, string accountType, string initialDeposit, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user can login into the home page", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user can creates a new account", exampleTags);
 #line 3
 this.ScenarioSetup(scenarioInfo);
 #line 4
- testRunner.Given("The user enters to the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("The user enters to the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 5
- testRunner.When("The user logs with a valid user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.And("The user logs with a valid user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 6
- testRunner.Then("The user \'mngr52720\' has logged correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.When("The user goes to the new account page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 7
+    testRunner.And(string.Format("The user creates a new account with parameters \'{0}\', \'{1}\', \'{2}\'", customerId, accountType, initialDeposit), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("The user cannot login into the home page", SourceLine=7)]
-        public virtual void TheUserCannotLoginIntoTheHomePage()
+        [TechTalk.SpecRun.ScenarioAttribute("The user can creates a new account, Variant 0", SourceLine=10)]
+        public virtual void TheUserCanCreatesANewAccount_Variant0()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user cannot login into the home page", ((string[])(null)));
-#line 8
-this.ScenarioSetup(scenarioInfo);
-#line 9
- testRunner.Given("The user enters to the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 10
- testRunner.When("The user logs with an invalid user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 11
- testRunner.Then("The web throws a pop up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.TheUserCanCreatesANewAccount("56274", "Current", "500", ((string[])(null)));
 #line hidden
-            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("The user can creates a new account, Variant 1", SourceLine=10)]
+        public virtual void TheUserCanCreatesANewAccount_Variant1()
+        {
+            this.TheUserCanCreatesANewAccount("56274", "Savings", "500", ((string[])(null)));
+#line hidden
         }
         
         [TechTalk.SpecRun.TestRunCleanup()]
