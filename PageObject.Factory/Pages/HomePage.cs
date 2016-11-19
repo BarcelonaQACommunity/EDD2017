@@ -17,7 +17,7 @@ namespace PageObject.Factory.Pages
     public class HomePage : PageObjectBase, IHomePage
     {
         // The URL.
-        private static string _webDirection = "http://demo.guru99.com/V4/index.php";
+        private const string WebDirection = "http://demo.guru99.com/V4/index.php";
 
         #region .: Selenium WebDriver Elements :.
 
@@ -43,13 +43,13 @@ namespace PageObject.Factory.Pages
             this.SetUpWebDriverBase();
             PageFactory.InitElements(this.WebDriver, this);
         }
-
+        
         /// <summary>
         /// Goes to home page.
         /// </summary>
         public void GoToHomePage()
         {
-            this.WebDriver.Navigate().GoToUrl(_webDirection);
+            this.WebDriver.Navigate().GoToUrl(WebDirection);
         }
 
         /// <summary>

@@ -33,18 +33,27 @@ namespace UserStories.AcceptanceTest.Steps
             this._selectEditCustomerPage = AutofacContainer.AContainer.Resolve<ISelectEditCustomerPage>();
         }
 
+        /// <summary>
+        /// Whens the user goes to the select edit customer page.
+        /// </summary>
         [When(@"The user goes to the select edit customer page")]
         public void WhenTheUserGoesToTheSelectEditCustomerPage()
         {
             this._managerPage.GoToEditCustomerPage();
         }
 
+        /// <summary>
+        /// Whens the user inserts a valid customer identifier.
+        /// </summary>
         [When(@"The user inserts a valid customer id")]
         public void WhenTheUserInsertsAValidCustomerId()
         {
             this._selectEditCustomerPage.InsertUserId("56274");
         }
 
+        /// <summary>
+        /// Whens the user clicks the submit button.
+        /// </summary>
         [When(@"The user clicks the select edit customer submit button")]
         public void WhenTheUserClicksTheSubmitButton()
         {
