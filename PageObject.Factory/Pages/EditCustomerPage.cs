@@ -4,6 +4,9 @@ using OpenQA.Selenium.Support.PageObjects;
 using PageObject.Factory.Contracts.Pages.Contracts;
 using PageObject.Models;
 
+#pragma warning disable 649
+#pragma warning disable 169
+
 namespace PageObject.Factory.Pages
 {
     /// <summary>
