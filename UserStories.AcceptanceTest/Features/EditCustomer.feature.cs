@@ -83,8 +83,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 10
     testRunner.And("The user clicks the submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.Then("The customer with parameters \'Juan\', \'15121990\', \'Male\', \'Plaza Catalunya\', \'Barc" +
-                    "elona\', \'Barcelona\', \'123456\', \'666123444\' has been edited", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The customer with parameters \'juan serna\', \'15121990\', \'Male\', \'Plaza Catalunya\'," +
+                    " \'Barcelona\', \'Barcelona\', \'123456\', \'666123444\' has been edited", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
