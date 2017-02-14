@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing.Imaging;
+using System.Globalization;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
@@ -44,6 +46,17 @@ namespace PageObject.SetUpWebDriver
             caps.SetCapability("accessKey", "ba81bd05-eb98-4a41-a837-65817ccc8bc1");
 
             WebDriver = new RemoteWebDriver(new Uri("http://ondemand.saucelabs.com:80/wd/hub"), caps, TimeSpan.FromSeconds(600));
+        }
+
+        /// <summary>
+        /// Makes the screenshot.
+        /// </summary>
+        /// <param name="scenario">The scenario.</param>
+        public static void MakeScreenshot(string scenario)
+        {
+            var screenshot = ((ITakesScreenshot)WebDriver).GetScreenshot();
+            var asdf = $"{DateTime.Now.ToString("d-M-yyyy HH-mm-ss", CultureInfo.InvariantCulture)}_{scenario}.jpeg";
+            screenshot.SaveAsFile(asdf, ImageFormat.Jpeg);
         }
 
 

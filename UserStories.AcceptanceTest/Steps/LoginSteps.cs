@@ -46,7 +46,7 @@ namespace UserStories.AcceptanceTest.Steps
         [When(@"The user logs with a valid user")]
         public void WhenTheUserLogsWithAValidUser()
         {
-            this._homePage.LoginUser("mngr59728", "YzUrEqa");
+            this._homePage.LoginUser("mngr66174", "vutAhud");
         }
 
         /// <summary>
@@ -82,6 +82,11 @@ namespace UserStories.AcceptanceTest.Steps
         [AfterScenario]
         public void AfterScenario()
         {
+            if (ScenarioContext.Current.TestError != null)
+            {
+                SetUpWebDriver.MakeScreenshot(ScenarioContext.Current.ScenarioInfo.Title);
+            }
+
             SetUpWebDriver.CloseChromeWebDriver();
         }
     }
