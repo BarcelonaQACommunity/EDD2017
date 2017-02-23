@@ -9,6 +9,8 @@ using UserStories.AcceptanceTest.Steps.Base;
 
 namespace UserStories.AcceptanceTest.Steps
 {
+    using System.Threading;
+
     /// <summary>
     /// The new customer step.
     /// </summary>
@@ -30,9 +32,9 @@ namespace UserStories.AcceptanceTest.Steps
         /// </summary>
         public NewCustomerStep()
         {
-            this._managerPage = AutofacContainer.SauceLabsContainer.Resolve<IManagerPage>();
-            this._newCustomerPage = AutofacContainer.SauceLabsContainer.Resolve<INewCustomerPage>();
-            this._customerRegisteredPage = AutofacContainer.SauceLabsContainer.Resolve<ICustomerRegisteredPage>();
+            this._managerPage = AutofacContainer.AContainer.Resolve<IManagerPage>();
+            this._newCustomerPage = AutofacContainer.AContainer.Resolve<INewCustomerPage>();
+            this._customerRegisteredPage = AutofacContainer.AContainer.Resolve<ICustomerRegisteredPage>();
         }
 
         /// <summary>
@@ -41,6 +43,7 @@ namespace UserStories.AcceptanceTest.Steps
         [When(@"The user goes to the new customer page")]
         public void WhenTheUserGoesToTheNewCustomerPage()
         {
+            Thread.Sleep(TimeSpan.FromSeconds(1));
             this._managerPage.GoToAddNewCustomerPage();
         }
 

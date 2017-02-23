@@ -8,6 +8,8 @@ using PageObject.SauceLabs.Factory.Base;
 
 namespace PageObject.SauceLabs.Factory.Pages
 {
+    using System.Threading;
+
     /// <summary>
     /// The customer registered page.
     /// </summary>
@@ -38,6 +40,8 @@ namespace PageObject.SauceLabs.Factory.Pages
         /// <returns></returns>
         public bool IsCustomerRegistered(Customer customer)
         {
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+
             return this.WebDriver.FindElements(By.TagName("p")).Any(x => x.Text.Contains(CustomerRegisteredHeader)) &&
                    this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Contains(CustomerRegisteredTitle)) &&
                    this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Contains(customer.Name)) &&
@@ -56,6 +60,8 @@ namespace PageObject.SauceLabs.Factory.Pages
         /// <returns></returns>
         public bool IsCustomerUpdated(Customer customer)
         {
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+
             return this.WebDriver.FindElements(By.TagName("p")).Any(x => x.Text.Contains(CustomerUpdatedHeader)) &&
                    this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Contains(CustomerUpdatedTitle)) &&
                    this.WebDriver.FindElements(By.TagName("td")).Any(x => x.Text.Contains(customer.Name)) &&

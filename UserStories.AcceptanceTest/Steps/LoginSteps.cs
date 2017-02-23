@@ -26,8 +26,8 @@ namespace UserStories.AcceptanceTest.Steps
         /// </summary>
         public LoginSteps()
         {
-            this._homePage = AutofacContainer.SauceLabsContainer.Resolve<IHomePage>();
-            this._managerPage = AutofacContainer.SauceLabsContainer.Resolve<IManagerPage>();
+            this._homePage = AutofacContainer.AContainer.Resolve<IHomePage>();
+            this._managerPage = AutofacContainer.AContainer.Resolve<IManagerPage>();
         }
 
         /// <summary>

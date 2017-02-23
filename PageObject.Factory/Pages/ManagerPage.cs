@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using System.Threading;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using PageObject.Factory.Base;
 using PageObject.Factory.Contracts.Pages.Contracts;
@@ -8,6 +10,9 @@ using PageObject.Factory.Contracts.Pages.Contracts;
 
 namespace PageObject.Factory.Pages
 {
+    /// <summary>
+    /// The manager page.
+    /// </summary>
     public class ManagerPage : PageObjectBase, IManagerPage
     {
         #region .: Selenium WebDriver Elements :.
@@ -50,6 +55,7 @@ namespace PageObject.Factory.Pages
         /// <returns></returns>
         public string GetWelcomeUserManager()
         {
+            Thread.Sleep(TimeSpan.FromSeconds(1));
             return this._userWelcomeTextBox.Text;
         }
 
@@ -58,6 +64,7 @@ namespace PageObject.Factory.Pages
         /// </summary>
         public void GoToAddNewCustomerPage()
         {
+            Thread.Sleep(TimeSpan.FromSeconds(1));
             this._newCustomerButton.Click();
         }
 
@@ -66,6 +73,7 @@ namespace PageObject.Factory.Pages
         /// </summary>
         public void GoToEditCustomerPage()
         {
+            Thread.Sleep(TimeSpan.FromSeconds(1));
             this._editCustomerButton.Click();
         }
 
@@ -74,6 +82,7 @@ namespace PageObject.Factory.Pages
         /// </summary>
         public void GoToNewAccountPage()
         {
+            Thread.Sleep(TimeSpan.FromSeconds(1));
             this._newAccountButton.Click();
         }
     }

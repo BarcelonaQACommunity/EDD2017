@@ -6,6 +6,9 @@ using PageObject.SauceLabs.Factory.Base;
 
 namespace PageObject.SauceLabs.Factory.Pages
 {
+    using System;
+    using System.Threading;
+
     /// <summary>
     /// The Home Page.
     /// http://demo.guru99.com/V4/index.php
@@ -74,6 +77,7 @@ namespace PageObject.SauceLabs.Factory.Pages
         /// </summary>
         public void SwitchToIncorrectUserLoginAlert()
         {
+            Thread.Sleep(TimeSpan.FromSeconds(1));
             var alert = this.WebDriver.SwitchTo().Alert();
             alert.Accept();
         }

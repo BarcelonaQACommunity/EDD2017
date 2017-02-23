@@ -7,12 +7,15 @@ using OpenQA.Selenium.Remote;
 
 namespace PageObject.SetUpWebDriver
 {
+    using OpenQA.Selenium.Firefox;
+
     /// <summary>
     /// Selenium Web Driver set up Class
     /// </summary>
     public static class SetUpWebDriver
     {
         private const string ChromePath = @"D:\";
+        private const string GeckoDriverPath = @"D:\";
 
         /// <summary>
         /// Gets the web driver.
@@ -29,6 +32,20 @@ namespace PageObject.SetUpWebDriver
         public static void SetUpChromeWebDriver()
         {
             WebDriver = new ChromeDriver(ChromeDriverService.CreateDefaultService(ChromePath), new ChromeOptions(), TimeSpan.FromSeconds(10));
+            WebDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
+            WebDriver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
+            WebDriver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(5));
+        }
+
+        /// <summary>
+        /// The set up firefow web driver.
+        /// </summary>
+        public static void SetUpFirefowWebDriver()
+        {
+            WebDriver = new FirefoxDriver(FirefoxDriverService.CreateDefaultService(GeckoDriverPath), new FirefoxOptions(), TimeSpan.FromSeconds(10));
+            WebDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
+            WebDriver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
+            WebDriver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(5));
         }
 
         /// <summary>

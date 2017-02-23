@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using System.Threading;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using PageObject.Factory.Base;
 using PageObject.Factory.Contracts.Pages.Contracts;
@@ -76,6 +78,7 @@ namespace PageObject.Factory.Pages
         /// </summary>
         public void SwitchToIncorrectUserLoginAlert()
         {
+            Thread.Sleep(TimeSpan.FromSeconds(1));
             var alert = this.WebDriver.SwitchTo().Alert();
             alert.Accept();
         }

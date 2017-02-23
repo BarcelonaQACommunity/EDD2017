@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using System.Threading;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using PageObject.Factory.Contracts.Pages.Contracts;
 using PageObject.SauceLabs.Factory.Base;
@@ -51,6 +53,7 @@ namespace PageObject.SauceLabs.Factory.Pages
         /// <returns></returns>
         public string GetWelcomeUserManager()
         {
+            Thread.Sleep(TimeSpan.FromSeconds(1));
             return this._userWelcomeTextBox.Text;
         }
 
@@ -59,6 +62,7 @@ namespace PageObject.SauceLabs.Factory.Pages
         /// </summary>
         public void GoToAddNewCustomerPage()
         {
+            Thread.Sleep(TimeSpan.FromSeconds(1));
             this._newCustomerButton.Click();
         }
 
@@ -67,6 +71,7 @@ namespace PageObject.SauceLabs.Factory.Pages
         /// </summary>
         public void GoToEditCustomerPage()
         {
+            Thread.Sleep(TimeSpan.FromSeconds(1));
             this._editCustomerButton.Click();
         }
 
@@ -75,6 +80,7 @@ namespace PageObject.SauceLabs.Factory.Pages
         /// </summary>
         public void GoToNewAccountPage()
         {
+            Thread.Sleep(TimeSpan.FromSeconds(1));
             this._newAccountButton.Click();
         }
     }
