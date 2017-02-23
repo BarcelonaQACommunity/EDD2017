@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{21C6B5A6-4756-435D-B57C-9C82C267781D}</ProjectGuid>
+    <ProjectGuid>{EDAEF234-B288-4B18-9F32-99BD161EB7D2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CrossLayer.Autofac</RootNamespace>
-    <AssemblyName>CrossLayer.Autofac</AssemblyName>
+    <RootNamespace>PageObject.SauceLabs.Factory</RootNamespace>
+    <AssemblyName>PageObject.SauceLabs.Factory</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,35 +31,48 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac, Version=4.2.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\packages\Autofac.4.2.1\lib\net45\Autofac.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.0.1\lib\net40\WebDriver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.0.1\lib\net40\WebDriver.Support.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutofacContainer.cs" />
+    <Compile Include="Base\SLPageObjectBase.cs" />
+    <Compile Include="Pages\SLCustomerRegisteredPage.cs" />
+    <Compile Include="Pages\SLEditCustomerPage.cs" />
+    <Compile Include="Pages\SLHomePage.cs" />
+    <Compile Include="Pages\SLManagerPage.cs" />
+    <Compile Include="Pages\SLNewAccountPage.cs" />
+    <Compile Include="Pages\SLNewCustomerPage.cs" />
+    <Compile Include="Pages\SLSelectEditCustomerPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\PageObject.Factory.Contracts\PageObject.Factory.Contracts.csproj">
       <Project>{647FB283-AE5A-4B68-9799-4BE70D7BAF8B}</Project>
       <Name>PageObject.Factory.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PageObject.Factory\PageObject.Factory.csproj">
-      <Project>{A088A211-736D-48C8-8D8B-95F31064E975}</Project>
-      <Name>PageObject.Factory</Name>
+    <ProjectReference Include="..\PageObject.Models\PageObject.Models.csproj">
+      <Project>{56F9F583-806C-4EA7-AA72-09FE612DEB13}</Project>
+      <Name>PageObject.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PageObject.SauceLabs.Factory\PageObject.SauceLabs.Factory.csproj">
-      <Project>{edaef234-b288-4b18-9f32-99bd161eb7d2}</Project>
-      <Name>PageObject.SauceLabs.Factory</Name>
+    <ProjectReference Include="..\PageObject.SetUpWebDriver\PageObject.SetUpWebDriver.csproj">
+      <Project>{0B22FCD6-C6A3-4722-9D22-FA4D392B6741}</Project>
+      <Name>PageObject.SetUpWebDriver</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

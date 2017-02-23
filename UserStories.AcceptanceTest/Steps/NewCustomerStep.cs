@@ -30,9 +30,9 @@ namespace UserStories.AcceptanceTest.Steps
         /// </summary>
         public NewCustomerStep()
         {
-            this._managerPage = AutofacContainer.AContainer.Resolve<IManagerPage>();
-            this._newCustomerPage = AutofacContainer.AContainer.Resolve<INewCustomerPage>();
-            this._customerRegisteredPage = AutofacContainer.AContainer.Resolve<ICustomerRegisteredPage>();
+            this._managerPage = AutofacContainer.SauceLabsContainer.Resolve<IManagerPage>();
+            this._newCustomerPage = AutofacContainer.SauceLabsContainer.Resolve<INewCustomerPage>();
+            this._customerRegisteredPage = AutofacContainer.SauceLabsContainer.Resolve<ICustomerRegisteredPage>();
         }
 
         /// <summary>

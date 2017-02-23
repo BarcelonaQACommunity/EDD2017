@@ -27,8 +27,8 @@ namespace UserStories.AcceptanceTest.Steps
         /// </summary>
         public NewAccountStep()
         {
-            this._managerPage = AutofacContainer.AContainer.Resolve<IManagerPage>();
-            this._newAccountPage = AutofacContainer.AContainer.Resolve<INewAccountPage>();
+            this._managerPage = AutofacContainer.SauceLabsContainer.Resolve<IManagerPage>();
+            this._newAccountPage = AutofacContainer.SauceLabsContainer.Resolve<INewAccountPage>();
         }
 
         /// <summary>

@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using PageObject.Factory.Contracts.Pages.Contracts;
 using PageObject.Factory.Pages;
+using PageObject.SauceLabs.Factory.Pages;
 
 namespace CrossLayer.Autofac
 {
@@ -13,11 +14,18 @@ namespace CrossLayer.Autofac
         /// Gets the container.
         /// </summary>
         public static IContainer AContainer { get; private set; }
+        public static IContainer SauceLabsContainer { get; private set; }
 
         /// <summary>
         /// Initializes the <see cref="AutofacContainer"/> class.
         /// </summary>
         static AutofacContainer()
+        {
+            AutofacContainerSelenium();
+            AutofacContainerSauceLabs();
+        }
+
+        private static void AutofacContainerSelenium()
         {
             var buildContainer = new ContainerBuilder();
             buildContainer.RegisterType<HomePage>().As<IHomePage>();
@@ -29,6 +37,20 @@ namespace CrossLayer.Autofac
             buildContainer.RegisterType<NewAccountPage>().As<INewAccountPage>();
 
             AContainer = buildContainer.Build();
+        }
+
+        private static void AutofacContainerSauceLabs()
+        {
+            var buildContainer = new ContainerBuilder();
+            buildContainer.RegisterType<SLHomePage>().As<IHomePage>();
+            buildContainer.RegisterType<SLManagerPage>().As<IManagerPage>();
+            buildContainer.RegisterType<SLNewCustomerPage>().As<INewCustomerPage>();
+            buildContainer.RegisterType<SLCustomerRegisteredPage>().As<ICustomerRegisteredPage>();
+            buildContainer.RegisterType<SLSelectEditCustomerPage>().As<ISelectEditCustomerPage>();
+            buildContainer.RegisterType<SLEditCustomerPage>().As<IEditCustomerPage>();
+            buildContainer.RegisterType<SLNewAccountPage>().As<INewAccountPage>();
+
+            SauceLabsContainer = buildContainer.Build();
         }
     }
 }

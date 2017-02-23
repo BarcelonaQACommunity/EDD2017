@@ -33,10 +33,10 @@ namespace UserStories.AcceptanceTest.Steps
         /// </summary>
         public EditCustomerStep()
         {
-            this._managerPage = AutofacContainer.AContainer.Resolve<IManagerPage>();
-            this._selectEditCustomerPage = AutofacContainer.AContainer.Resolve<ISelectEditCustomerPage>();
-            this._editCustomerPage = AutofacContainer.AContainer.Resolve<IEditCustomerPage>();
-            this._customerRegisteredPage = AutofacContainer.AContainer.Resolve<ICustomerRegisteredPage>();
+            this._managerPage = AutofacContainer.SauceLabsContainer.Resolve<IManagerPage>();
+            this._selectEditCustomerPage = AutofacContainer.SauceLabsContainer.Resolve<ISelectEditCustomerPage>();
+            this._editCustomerPage = AutofacContainer.SauceLabsContainer.Resolve<IEditCustomerPage>();
+            this._customerRegisteredPage = AutofacContainer.SauceLabsContainer.Resolve<ICustomerRegisteredPage>();
         }
 
         /// <summary>
