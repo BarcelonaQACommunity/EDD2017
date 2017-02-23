@@ -4,11 +4,11 @@ using System.Globalization;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.IE;
 
 namespace PageObject.SetUpWebDriver
 {
-    using OpenQA.Selenium.Firefox;
-
     /// <summary>
     /// Selenium Web Driver set up Class
     /// </summary>
@@ -16,6 +16,7 @@ namespace PageObject.SetUpWebDriver
     {
         private const string ChromePath = @"D:\";
         private const string GeckoDriverPath = @"D:\";
+        private const string IEDriverPath = @"D:\";
 
         /// <summary>
         /// Gets the web driver.
@@ -43,6 +44,17 @@ namespace PageObject.SetUpWebDriver
         public static void SetUpFirefowWebDriver()
         {
             WebDriver = new FirefoxDriver(FirefoxDriverService.CreateDefaultService(GeckoDriverPath), new FirefoxOptions(), TimeSpan.FromSeconds(10));
+            WebDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
+            WebDriver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
+            WebDriver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(5));
+        }
+
+        /// <summary>
+        /// The set up internet explorer web driver.
+        /// </summary>
+        public static void SetUpInternetExplorerWebDriver()
+        {
+            WebDriver = new InternetExplorerDriver(InternetExplorerDriverService.CreateDefaultService(IEDriverPath), new InternetExplorerOptions(), TimeSpan.FromSeconds(10));
             WebDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
             WebDriver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
             WebDriver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(5));

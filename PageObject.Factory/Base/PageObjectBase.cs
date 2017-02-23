@@ -15,6 +15,9 @@ namespace PageObject.Factory.Base
         /// </summary>
         protected IWebDriver WebDriver;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PageObjectBase"/> class.
+        /// </summary>
         public PageObjectBase()
         {
             this.WebDriver = SetUpWebDriver.SetUpWebDriver.WebDriver;
@@ -25,8 +28,7 @@ namespace PageObject.Factory.Base
         /// </summary>
         protected void SetUpWebDriverBase()
         {
-            // SetUpWebDriver.SetUpWebDriver.SetUpChromeWebDriver();
-            SetUpWebDriver.SetUpWebDriver.SetUpFirefowWebDriver();
+            SetUpWebDriver.SetUpWebDriver.SetUpChromeWebDriver();
             this.WebDriver = SetUpWebDriver.SetUpWebDriver.WebDriver;
             this.WebDriver.Manage().Cookies.DeleteAllCookies();
             this.WebDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
