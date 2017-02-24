@@ -14,7 +14,6 @@ namespace CrossLayer.Autofac
         /// Gets the container.
         /// </summary>
         public static IContainer AContainer { get; private set; }
-        public static IContainer SauceLabsContainer { get; private set; }
 
         /// <summary>
         /// Initializes the <see cref="AutofacContainer"/> class.
@@ -22,7 +21,7 @@ namespace CrossLayer.Autofac
         static AutofacContainer()
         {
             AutofacContainerSelenium();
-            AutofacContainerSauceLabs();
+            // AutofacContainerSauceLabs();
         }
 
         private static void AutofacContainerSelenium()
@@ -50,7 +49,7 @@ namespace CrossLayer.Autofac
             buildContainer.RegisterType<SLEditCustomerPage>().As<IEditCustomerPage>();
             buildContainer.RegisterType<SLNewAccountPage>().As<INewAccountPage>();
 
-            SauceLabsContainer = buildContainer.Build();
+            AContainer = buildContainer.Build();
         }
     }
 }
