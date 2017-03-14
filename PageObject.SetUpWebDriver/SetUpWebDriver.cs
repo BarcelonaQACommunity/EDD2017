@@ -38,9 +38,9 @@ namespace PageObject.SetUpWebDriver
         }
 
         /// <summary>
-        /// The set up firefow web driver.
+        /// The set up firefox web driver.
         /// </summary>
-        public static void SetUpFirefowWebDriver()
+        public static void SetUpFirefoxWebDriver()
         {
             WebDriver = new FirefoxDriver(FirefoxDriverService.CreateDefaultService(WebDriverPath), new FirefoxOptions(), TimeSpan.FromSeconds(10));
             WebDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));

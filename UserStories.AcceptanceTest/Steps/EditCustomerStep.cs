@@ -55,7 +55,7 @@ namespace UserStories.AcceptanceTest.Steps
         [When(@"The user inserts a valid customer id")]
         public void WhenTheUserInsertsAValidCustomerId()
         {
-            this._selectEditCustomerPage.InsertUserId("62068");
+            this._selectEditCustomerPage.InsertUserId("29307");
         }
 
         /// <summary>
