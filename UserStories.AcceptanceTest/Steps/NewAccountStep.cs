@@ -37,7 +37,7 @@ namespace UserStories.AcceptanceTest.Steps
         [When(@"The user goes to the new account page")]
         public void WhenTheUserGoesToTheNewAccountPage()
         {
-            this._managerPage.GoToNewAccountPage();
+            //TO DO
         }
 
         /// <summary>
@@ -49,22 +49,15 @@ namespace UserStories.AcceptanceTest.Steps
         [When(@"The user creates a new account with parameters '(.*)', '(.*)', '(.*)'")]
         public void WhenTheUserCreatesANewAccountWithParameters(string customerId, string accountType, int initialDeposit)
         {
-            switch (accountType)
-            {
-                case "Current":
-                    this._newAccountPage.CreateCurrentAccount(customerId, initialDeposit);
-                    break;
-
-                case "Savings":
-                    this._newAccountPage.CreateSavingAccount(customerId, initialDeposit);
-                    break;
-            }
+            //TO DO
         }
 
         [When(@"The user clicks submit button to create new account")]
         public void WhenTheUserClicksSubmitButtonToCreateNewAccount()
         {
-            this._newAccountPage.ClickSubmitButton();
+            //TO DO
         }
+
+        //TO DO THEN interface
     }
 }

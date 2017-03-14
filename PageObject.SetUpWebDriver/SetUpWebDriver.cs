@@ -6,6 +6,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
+using System.IO;
 
 namespace PageObject.SetUpWebDriver
 {
@@ -14,9 +15,7 @@ namespace PageObject.SetUpWebDriver
     /// </summary>
     public static class SetUpWebDriver
     {
-        private const string ChromePath = @"D:\";
-        private const string GeckoDriverPath = @"D:\";
-        private const string IEDriverPath = @"D:\";
+        private const string WebDriverPath = @"..\PageObject.SetUpWebDriver\binaries\";
 
         /// <summary>
         /// Gets the web driver.
@@ -32,7 +31,7 @@ namespace PageObject.SetUpWebDriver
         /// <returns><see cref="IWebDriver"/></returns>
         public static void SetUpChromeWebDriver()
         {
-            WebDriver = new ChromeDriver(ChromeDriverService.CreateDefaultService(ChromePath), new ChromeOptions(), TimeSpan.FromSeconds(10));
+            WebDriver = new ChromeDriver(ChromeDriverService.CreateDefaultService(WebDriverPath), new ChromeOptions(), TimeSpan.FromSeconds(10));
             WebDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
             WebDriver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
             WebDriver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(5));
@@ -43,7 +42,7 @@ namespace PageObject.SetUpWebDriver
         /// </summary>
         public static void SetUpFirefowWebDriver()
         {
-            WebDriver = new FirefoxDriver(FirefoxDriverService.CreateDefaultService(GeckoDriverPath), new FirefoxOptions(), TimeSpan.FromSeconds(10));
+            WebDriver = new FirefoxDriver(FirefoxDriverService.CreateDefaultService(WebDriverPath), new FirefoxOptions(), TimeSpan.FromSeconds(10));
             WebDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
             WebDriver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
             WebDriver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(5));
@@ -54,7 +53,7 @@ namespace PageObject.SetUpWebDriver
         /// </summary>
         public static void SetUpInternetExplorerWebDriver()
         {
-            WebDriver = new InternetExplorerDriver(InternetExplorerDriverService.CreateDefaultService(IEDriverPath), new InternetExplorerOptions(), TimeSpan.FromSeconds(10));
+            WebDriver = new InternetExplorerDriver(InternetExplorerDriverService.CreateDefaultService(WebDriverPath), new InternetExplorerOptions(), TimeSpan.FromSeconds(10));
             WebDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
             WebDriver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
             WebDriver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(5));

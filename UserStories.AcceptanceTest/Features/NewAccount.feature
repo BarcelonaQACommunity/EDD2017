@@ -5,6 +5,7 @@ Scenario Outline: The user can creates a new account
     And The user logs with a valid user
     When The user goes to the new account page
     And The user creates a new account with parameters '<customerId>', '<accountType>', '<initialDeposit>'
+#######TO DO: Add then
 
     Examples: 
     | customerId | accountType | initialDeposit |
