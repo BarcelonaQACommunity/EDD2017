@@ -61,17 +61,17 @@ namespace UserStories.AcceptanceTest.Features
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("The user can login into the home page", SourceLine=2)]
-        public virtual void TheUserCanLoginIntoTheHomePage()
+        [TechTalk.SpecRun.ScenarioAttribute("The user \'mngr70164\' can login into the home page", SourceLine=3)]
+        public virtual void TheUserMngr70164CanLoginIntoTheHomePage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user can login into the home page", ((string[])(null)));
-#line 3
-this.ScenarioSetup(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user \'mngr70164\' can login into the home page", ((string[])(null)));
 #line 4
- testRunner.Given("The user enters to the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 5
- testRunner.When("The user logs with a valid user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("The user enters to the home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 6
+ testRunner.When("The user logs with a valid user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 7
  testRunner.Then("The user \'mngr70164\' has logged correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

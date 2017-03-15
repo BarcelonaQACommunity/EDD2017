@@ -1,9 +1,10 @@
 ﻿Feature: Login
 
-Scenario: The user can login into the home page
+
+Scenario: The user 'mngr70164' can login into the home page
 	Given The user enters to the home page
 	When The user logs with a valid user
 	Then The user 'mngr70164' has logged correctly
 
-# TO DO
+# TO DO Exercise 1
 #Scenario: The user cannot login into the home page

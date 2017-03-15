@@ -31,33 +31,7 @@ namespace UserStories.AcceptanceTest.Steps
             this._newAccountPage = AutofacContainer.AContainer.Resolve<INewAccountPage>();
         }
 
-        /// <summary>
-        /// Whens the user goes to the new account page.
-        /// </summary>
-        [When(@"The user goes to the new account page")]
-        public void WhenTheUserGoesToTheNewAccountPage()
-        {
-            //TO DO
-        }
+        //TO DO Exercise 2
 
-        /// <summary>
-        /// Whens the user creates a new account with parameters.
-        /// </summary>
-        /// <param name="customerId">The customer identifier.</param>
-        /// <param name="accountType">Type of the account.</param>
-        /// <param name="initialDeposit">The initial deposit.</param>
-        [When(@"The user creates a new account with parameters '(.*)', '(.*)', '(.*)'")]
-        public void WhenTheUserCreatesANewAccountWithParameters(string customerId, string accountType, int initialDeposit)
-        {
-            //TO DO
-        }
-
-        [When(@"The user clicks submit button to create new account")]
-        public void WhenTheUserClicksSubmitButtonToCreateNewAccount()
-        {
-            //TO DO
-        }
-
-        //TO DO THEN interface
     }
 }
