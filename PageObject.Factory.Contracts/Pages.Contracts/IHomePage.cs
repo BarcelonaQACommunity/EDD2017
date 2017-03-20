@@ -24,5 +24,16 @@ namespace PageObject.Factory.Contracts.Pages.Contracts
         /// Switches to incorrect user login alert.
         /// </summary>
         void SwitchToIncorrectUserLoginAlert();
+
+        /// <summary>
+        /// Takes the screenshot.
+        /// </summary>
+        /// <param name="scenario">The scenario.</param>
+        void TakeScreenshot(string scenario);
+
+        /// <summary>
+        /// Closes the web driver.
+        /// </summary>
+        void CloseWebDriver();
     }
 }

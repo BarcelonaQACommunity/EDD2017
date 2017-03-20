@@ -23,6 +23,11 @@ namespace PageObject.Factory.Contracts.Pages.Contracts
         void CreateCurrentAccount(string customerId, int initialDeposit);
 
         /// <summary>
+        /// Gets the URL.
+        /// </summary>
+        string GetUrl();
+
+        /// <summary>
         /// Clicks the submit button.
         /// </summary>
         void ClickSubmitButton();

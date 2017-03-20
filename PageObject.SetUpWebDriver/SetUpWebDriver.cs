@@ -91,7 +91,7 @@ namespace PageObject.SetUpWebDriver
         /// <summary>
         /// Closes the chrome web driver.
         /// </summary>
-        public static void CloseChromeWebDriver()
+        public static void CloseWebDriver()
         {
             WebDriver?.Dispose();
         }

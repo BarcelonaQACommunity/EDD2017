@@ -82,5 +82,21 @@ namespace PageObject.Factory.Pages
             var alert = this.WebDriver.SwitchTo().Alert();
             alert.Accept();
         }
+
+        /// <summary>
+        /// Takes the screenshot.
+        /// </summary>
+        public void TakeScreenshot(string scenario)
+        {
+            SetUpWebDriver.SetUpWebDriver.MakeScreenshot(scenario);
+        }
+
+        /// <summary>
+        /// Closes the web driver.
+        /// </summary>
+        public void CloseWebDriver()
+        {
+            SetUpWebDriver.SetUpWebDriver.CloseWebDriver();
+        }
     }
 }

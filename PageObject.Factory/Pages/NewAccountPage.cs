@@ -88,6 +88,14 @@ namespace PageObject.Factory.Pages
         }
 
         /// <summary>
+        /// Gets the URL.
+        /// </summary>
+        public string GetUrl()
+        {
+            return this.WebDriver.Url;
+        }
+
+        /// <summary>
         /// Clicks the submit button.
         /// </summary>
         public void ClickSubmitButton()

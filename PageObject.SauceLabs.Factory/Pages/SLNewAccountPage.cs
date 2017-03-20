@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System.Runtime.CompilerServices;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using PageObject.Factory.Contracts.Pages.Contracts;
@@ -82,6 +83,14 @@ namespace PageObject.SauceLabs.Factory.Pages
             accountSelect.SelectByText(CurrentAccount);
 
             this._initialDepositTextBox.SendKeys(initialDeposit.ToString());
+        }
+
+        /// <summary>
+        /// Gets the URL.
+        /// </summary>
+        public string GetUrl()
+        {
+            return this.WebDriver.Url;
         }
 
         /// <summary>

@@ -2,7 +2,6 @@
 using CrossLayer.Autofac;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PageObject.Factory.Contracts.Pages.Contracts;
-using PageObject.SetUpWebDriver;
 using TechTalk.SpecFlow;
 using UserStories.AcceptanceTest.Steps.Base;
 
@@ -84,10 +83,10 @@ namespace UserStories.AcceptanceTest.Steps
         {
             if (ScenarioContext.Current.TestError != null)
             {
-                SetUpWebDriver.MakeScreenshot(ScenarioContext.Current.ScenarioInfo.Title);
+                this._homePage.TakeScreenshot(ScenarioContext.Current.ScenarioInfo.Title);
             }
 
-            SetUpWebDriver.CloseChromeWebDriver();
+            this._homePage.CloseWebDriver();
         }
     }
 }
