@@ -68,10 +68,10 @@ namespace PageObject.SetUpWebDriver
             caps.SetCapability(CapabilityType.BrowserName, "chrome");
             caps.SetCapability(CapabilityType.Version, "45");
             caps.SetCapability(CapabilityType.Platform, "Windows 10");
-            caps.SetCapability("deviceName", "");
-            caps.SetCapability("deviceOrientation", "");
-            caps.SetCapability("username", "nyoronsheppard");
-            caps.SetCapability("accessKey", "ba81bd05-eb98-4a41-a837-65817ccc8bc1");
+            caps.SetCapability("deviceName", string.Empty);
+            caps.SetCapability("deviceOrientation", string.Empty);
+            caps.SetCapability("username", "developmentday");
+            caps.SetCapability("accessKey", "aa2470b9-3b6c-4392-8dee-0e1a0822df53");
 
             WebDriver = new RemoteWebDriver(new Uri("http://ondemand.saucelabs.com:80/wd/hub"), caps, TimeSpan.FromSeconds(600));
         }
