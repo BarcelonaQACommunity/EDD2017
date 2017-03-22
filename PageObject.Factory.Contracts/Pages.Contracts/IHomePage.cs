@@ -34,6 +34,6 @@ namespace PageObject.Factory.Contracts.Pages.Contracts
         /// <summary>
         /// Closes the web driver.
         /// </summary>
-        void CloseWebDriver();
+        void CloseWebDriver(bool isPassed);
     }
 }

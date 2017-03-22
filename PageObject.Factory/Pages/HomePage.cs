@@ -40,7 +40,7 @@ namespace PageObject.Factory.Pages
         /// <summary>
         /// Initializes a new instance of the <see cref="HomePage"/> class.
         /// </summary>
-        public HomePage()
+        public HomePage(string currentScenario)
         {
             this.SetUpWebDriverBase();
             PageFactory.InitElements(this.WebDriver, this);
@@ -94,9 +94,9 @@ namespace PageObject.Factory.Pages
         /// <summary>
         /// Closes the web driver.
         /// </summary>
-        public void CloseWebDriver()
+        public void CloseWebDriver(bool isPassed)
         {
-            SetUpWebDriver.SetUpWebDriver.CloseWebDriver();
+            SetUpWebDriver.SetUpWebDriver.CloseWebDriver(false, isPassed);
         }
     }
 }

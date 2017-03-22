@@ -25,7 +25,7 @@ namespace UserStories.AcceptanceTest.Steps
         /// </summary>
         public LoginSteps()
         {
-            this._homePage = AutofacContainer.AContainer.Resolve<IHomePage>();
+            this._homePage = AutofacContainer.AContainer.Resolve<IHomePage>(new NamedParameter("currentScenario", ScenarioContext.Current.ScenarioInfo.Title));
             this._managerPage = AutofacContainer.AContainer.Resolve<IManagerPage>();
         }
 
@@ -86,7 +86,7 @@ namespace UserStories.AcceptanceTest.Steps
                 this._homePage.TakeScreenshot(ScenarioContext.Current.ScenarioInfo.Title);
             }
 
-            this._homePage.CloseWebDriver();
+            this._homePage.CloseWebDriver(ScenarioContext.Current.TestError == null);
         }
     }
 }

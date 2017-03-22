@@ -62,7 +62,7 @@ namespace PageObject.SetUpWebDriver
         /// <summary>
         /// Sets up sauce labs web driver.
         /// </summary>
-        public static void SetUpSauceLabsWebDriver()
+        public static void SetUpSauceLabsWebDriver(string currentScenario)
         {
             var caps = new DesiredCapabilities();
             caps.SetCapability(CapabilityType.BrowserName, "chrome");
@@ -72,6 +72,7 @@ namespace PageObject.SetUpWebDriver
             caps.SetCapability("deviceOrientation", string.Empty);
             caps.SetCapability("username", "developmentday");
             caps.SetCapability("accessKey", "aa2470b9-3b6c-4392-8dee-0e1a0822df53");
+            caps.SetCapability("name", currentScenario);
 
             WebDriver = new RemoteWebDriver(new Uri("http://ondemand.saucelabs.com:80/wd/hub"), caps, TimeSpan.FromSeconds(600));
         }
@@ -87,12 +88,16 @@ namespace PageObject.SetUpWebDriver
             screenshot.SaveAsFile(asdf, ImageFormat.Jpeg);
         }
 
-
         /// <summary>
         /// Closes the chrome web driver.
         /// </summary>
-        public static void CloseWebDriver()
+        public static void CloseWebDriver(bool isSauceLabs, bool isPassed)
         {
+            if (isSauceLabs)
+            {
+                ((IJavaScriptExecutor)WebDriver).ExecuteScript("sauce:job-result=" + (isPassed ? "passed" : "failed"));
+            }
+
             WebDriver?.Dispose();
         }
     }

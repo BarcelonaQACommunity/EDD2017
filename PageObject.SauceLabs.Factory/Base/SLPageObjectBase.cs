@@ -28,7 +28,18 @@ namespace PageObject.SauceLabs.Factory.Base
         /// </summary>
         protected void SetUpWebDriverBase()
         {
-            SetUpWebDriver.SetUpWebDriver.SetUpSauceLabsWebDriver();
+            SetUpWebDriver.SetUpWebDriver.SetUpSauceLabsWebDriver(string.Empty);
+            this.WebDriver = SetUpWebDriver.SetUpWebDriver.WebDriver;
+            this.WebDriver.Manage().Cookies.DeleteAllCookies();
+            this.WebDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+        }
+
+        /// <summary>
+        /// Sets up web driver base.
+        /// </summary>
+        protected void SetUpWebDriverBase(string currentScenario)
+        {
+            SetUpWebDriver.SetUpWebDriver.SetUpSauceLabsWebDriver(currentScenario);
             this.WebDriver = SetUpWebDriver.SetUpWebDriver.WebDriver;
             this.WebDriver.Manage().Cookies.DeleteAllCookies();
             this.WebDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));

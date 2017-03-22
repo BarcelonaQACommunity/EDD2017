@@ -39,9 +39,9 @@ namespace PageObject.SauceLabs.Factory.Pages
         /// <summary>
         /// Initializes a new instance of the <see cref="SLHomePage"/> class.
         /// </summary>
-        public SLHomePage()
+        public SLHomePage(string currentScenario)
         {
-            this.SetUpWebDriverBase();
+            this.SetUpWebDriverBase(currentScenario);
             PageFactory.InitElements(this.WebDriver, this);
         }
 
@@ -93,9 +93,9 @@ namespace PageObject.SauceLabs.Factory.Pages
         /// <summary>
         /// Closes the web driver.
         /// </summary>
-        public void CloseWebDriver()
+        public void CloseWebDriver(bool isPassed)
         {
-            SetUpWebDriver.SetUpWebDriver.CloseWebDriver();
+            SetUpWebDriver.SetUpWebDriver.CloseWebDriver(true, isPassed);
         }
     }
 }
