@@ -40,7 +40,7 @@ namespace PageObject.Factory.Pages
         /// <summary>
         /// Initializes a new instance of the <see cref="HomePage"/> class.
         /// </summary>
-        public HomePage(string currentScenario)
+        public HomePage()
         {
             this.SetUpWebDriverBase();
             PageFactory.InitElements(this.WebDriver, this);
