@@ -31,7 +31,8 @@ namespace PageObject.SetUpWebDriver
         /// <returns><see cref="IWebDriver"/></returns>
         public static void SetUpChromeWebDriver()
         {
-            WebDriver = new ChromeDriver(ChromeDriverService.CreateDefaultService(WebDriverPath), new ChromeOptions(), TimeSpan.FromSeconds(10));
+            WebDriver = new ChromeDriver(ChromeDriverService.CreateDefaultService(WebDriverPath), 
+                new ChromeOptions(), TimeSpan.FromSeconds(10));
             WebDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
             WebDriver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
             WebDriver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(5));
@@ -42,7 +43,8 @@ namespace PageObject.SetUpWebDriver
         /// </summary>
         public static void SetUpFirefoxWebDriver()
         {
-            WebDriver = new FirefoxDriver(FirefoxDriverService.CreateDefaultService(WebDriverPath), new FirefoxOptions(), TimeSpan.FromSeconds(10));
+            WebDriver = new FirefoxDriver(FirefoxDriverService.CreateDefaultService(WebDriverPath), 
+                new FirefoxOptions(), TimeSpan.FromSeconds(10));
             WebDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
             WebDriver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
             WebDriver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(5));
@@ -53,7 +55,8 @@ namespace PageObject.SetUpWebDriver
         /// </summary>
         public static void SetUpInternetExplorerWebDriver()
         {
-            WebDriver = new InternetExplorerDriver(InternetExplorerDriverService.CreateDefaultService(WebDriverPath), new InternetExplorerOptions(), TimeSpan.FromSeconds(10));
+            WebDriver = new InternetExplorerDriver(InternetExplorerDriverService.CreateDefaultService(WebDriverPath), 
+                new InternetExplorerOptions(), TimeSpan.FromSeconds(10));
             WebDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
             WebDriver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
             WebDriver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(5));

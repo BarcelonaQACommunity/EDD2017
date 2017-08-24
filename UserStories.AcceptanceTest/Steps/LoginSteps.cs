@@ -25,7 +25,10 @@ namespace UserStories.AcceptanceTest.Steps
         /// </summary>
         public LoginSteps()
         {
-            this._homePage = AutofacContainer.AContainer.Resolve<IHomePage>(new NamedParameter("currentScenario", ScenarioContext.Current.ScenarioInfo.Title));
+            this._homePage = AutofacContainer.AContainer.
+                Resolve<IHomePage>(
+                new NamedParameter("currentScenario", ScenarioContext.Current.ScenarioInfo.Title));
+
             this._managerPage = AutofacContainer.AContainer.Resolve<IManagerPage>();
         }
 
@@ -39,13 +42,13 @@ namespace UserStories.AcceptanceTest.Steps
         }
 
         /// <summary>
-        /// Whens the user logs with a valid user.
+        /// When the user logs with a valid user.
         /// </summary>
         [Given(@"The user logs with a valid user")]
         [When(@"The user logs with a valid user")]
         public void WhenTheUserLogsWithAValidUser()
         {
-            this._homePage.LoginUser("mngr70164", "EjerYjY");
+            this._homePage.LoginUser("mngr94766", "uvAsenY");
         }
 
         /// <summary>
